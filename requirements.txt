@@ -1,0 +1,14 @@
+python-multipart
+python-dotenv
+python-jose
+fastapi
+uvicorn
+motor
+orjson
+pdfkit
+loguru
+dnsrecon
+requests
+python3-nmap
+reportlab
+wfuzz
