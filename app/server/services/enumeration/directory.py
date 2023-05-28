@@ -29,6 +29,8 @@ async def directory_bruteforce(target:HttpUrl,port:int):
             raise ValueError("Invalid port. Port must be either 80 or 443.")
         host=f"{target}:{port}/FUZZ/"
         dictionary = os.path.join(current_file_great_grandparent, 'dictionary', 'directory-list-2.3-medium.txt')
+        logger.debug('kill existing all instances of wfuzz')
+        process = sys_cmd('killall wfuzz')
         logger.debug('starting directory bruteforcing dns scan')
         cmd=f"wfuzz -u {host} -w {dictionary} --hl 0 -R 3 -v -f ./reports/enumeration/directory/wfuzz/directory_bruteforce.html,html"
         process =  sys_cmd(cmd)

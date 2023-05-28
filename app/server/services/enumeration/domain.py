@@ -18,6 +18,8 @@ def sys_cmd(cmd):
 def indepth_dns(host):
     try:
         logger.debug('starting indepth dns scan')
+        logger.debug('kill existing all instances of dnsrecon')
+        process = sys_cmd('killall dnsrecon')
         dictionary = os.path.join(current_file_great_grandparent, 'dictionary', 'directory-list-2.3-medium.txt')
         cmd = f"dnsrecon -d {host} -D {dictionary} -t std,rvl,srv,axfr,bing,yand,crt,snoop,tld,zonewalk -v --threads 75 > ./reports/domain/indepth_scan.log"
         process =  sys_cmd(cmd)
@@ -28,6 +30,8 @@ def indepth_dns(host):
 async def domain_info(host:str,options):
     try :
         logger.debug('starting normal dns scan')
+        logger.debug('kill existing all instances of dnsrecon')
+        process = sys_cmd('killall dnsrecon')
         cmd=f"dnsrecon -d {host} > ./reports/enumeration/domain/domain_info.log"
         process = sys_cmd(cmd)
         if options == enums.OPTIONS.ALL:
