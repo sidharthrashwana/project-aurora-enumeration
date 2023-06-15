@@ -2,7 +2,15 @@
 
 **Description**
 
-This project is a collection of modules designed and maintained by **Sidharth Rashwana** only. It is important to note that the author holds no responsibility for any misuse of these modules. It is advised to use them responsibly and with proper authorization.
+This project is used to enumerate the target to gather information about it.
+
+1.Port enumeration: This involves scanning the target system to identify open ports and the services running on them.
+
+2.Directory busting: This refers to the process of identifying directories and files on a web server by systematically enumerating common directory names.The goal is to discover hidden or unprotected files that may reveal sensitive information.
+
+3.Vulnerability finding: This module is used to find vulnerabilities about the web server.
+
+4.Service enumeration: This involves gathering information about the specific services running on the target system, such as the web server, database server, FTP server, etc.
 
 **Usage**
 
